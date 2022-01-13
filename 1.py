@@ -148,7 +148,16 @@
 # print(constants.Btu_th)
 # print(constants.ton_TNT)
 
+# from scipy import constants
+
+# print(constants.hp)
+# print(constants.horsepower)
+
 from scipy import constants
 
-print(constants.hp)
-print(constants.horsepower)
+print(constants.dyn)
+print(constants.dyne)
+print(constants.lbf)
+print(constants.pound_force)
+print(constants.kgf)
+print(constants.kilogram_force)
