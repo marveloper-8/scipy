@@ -59,10 +59,19 @@
 # print(constants.m_u)
 # print(constants.u)
 
+# from scipy import constants
+
+# print(constants.degree)
+# print(constants.arcmin)
+# print(constants.arcminute)
+# print(constants.arcsec)
+# print(constants.arcsecond)
+
 from scipy import constants
 
-print(constants.degree)
-print(constants.arcmin)
-print(constants.arcminute)
-print(constants.arcsec)
-print(constants.arcsecond)
+print(constants.minute)
+print(constants.hour)
+print(constants.day)
+print(constants.week)
+print(constants.year)
+print(constants.Julian_year)
