@@ -162,11 +162,20 @@
 # print(constants.kgf)
 # print(constants.kilogram_force)
 
-from scipy.optimize import root
-from math import cos
+# from scipy.optimize import root
+# from math import cos
 
-def eqn(x):
-    return x + cos(x)
+# def eqn(x):
+#     return x + cos(x)
 
-c = root(eqn, 0)
-print(c.x)
+# c = root(eqn, 0)
+# print(c.x)
+# print(c)
+
+from scipy.optimize import minimize
+
+def a(x):
+    return x**2 + x + 2
+
+b = minimize(a, 0, method='BFGS')
+print(b)
