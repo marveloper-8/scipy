@@ -110,15 +110,23 @@
 # print(constants.hectare)
 # print(constants.acre)
 
+# from scipy import constants
+
+# print(constants.liter)
+# print(constants.litre)
+# print(constants.gallon)
+# print(constants.gallon_US)
+# print(constants.gallon_imp)
+# print(constants.fluid_ounce)
+# print(constants.fluid_ounce_US)
+# print(constants.fluid_ounce_imp)
+# print(constants.barrel)
+# print(constants.bbl)
+
 from scipy import constants
 
-print(constants.liter)
-print(constants.litre)
-print(constants.gallon)
-print(constants.gallon_US)
-print(constants.gallon_imp)
-print(constants.fluid_ounce)
-print(constants.fluid_ounce_US)
-print(constants.fluid_ounce_imp)
-print(constants.barrel)
-print(constants.bbl)
+print(constants.kmh)
+print(constants.mph)
+print(constants.mach)
+print(constants.speed_of_sound)
+print(constants.knot)
