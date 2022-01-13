@@ -172,10 +172,16 @@
 # print(c.x)
 # print(c)
 
-from scipy.optimize import minimize
+# from scipy.optimize import minimize
 
-def a(x):
-    return x**2 + x + 2
+# def a(x):
+#     return x**2 + x + 2
 
-b = minimize(a, 0, method='BFGS')
-print(b)
+# b = minimize(a, 0, method='BFGS')
+# print(b)
+
+import numpy as np
+from scipy.sparse import csr_matrix
+
+a = np.array([0, 0, 0, 0, 0, 1, 1, 0, 2])
+print(csr_matrix(a))
