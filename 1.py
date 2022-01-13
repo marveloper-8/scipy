@@ -153,11 +153,20 @@
 # print(constants.hp)
 # print(constants.horsepower)
 
-from scipy import constants
+# from scipy import constants
 
-print(constants.dyn)
-print(constants.dyne)
-print(constants.lbf)
-print(constants.pound_force)
-print(constants.kgf)
-print(constants.kilogram_force)
+# print(constants.dyn)
+# print(constants.dyne)
+# print(constants.lbf)
+# print(constants.pound_force)
+# print(constants.kgf)
+# print(constants.kilogram_force)
+
+from scipy.optimize import root
+from math import cos
+
+def eqn(x):
+    return x + cos(x)
+
+c = root(eqn, 0)
+print(c.x)
