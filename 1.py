@@ -1,3 +1,5 @@
-from scipy import constants
+# from scipy import constants
+# print(constants.liter)
 
-print(constants.liter)
+import scipy
+print(scipy.__version__)
