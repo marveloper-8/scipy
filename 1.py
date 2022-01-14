@@ -309,4 +309,4 @@ from scipy import io
 import numpy as np
 
 a = np.arange(10)
-io.savemat('arr.mat', {"vec": a})
+io.savemat('a.mat', {"vec": a})
