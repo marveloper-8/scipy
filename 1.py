@@ -202,34 +202,79 @@
 # a = np.array([0, 0, 0, 0, 0, 1, 1, 0, 2])
 # print(csr_matrix(a))
 
+# import numpy as np
+# from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall, bellman_ford, depth_first_order, breadth_first_order
+# from scipy.sparse import csr_matrix
+
+# a = np.array([
+#     [0, 1, 2],
+#     [1, 0, 0],
+#     [2, 0, 0]
+# ])
+# c = np.array([
+#     [0, -1, 2],
+#     [1, 0, 0],
+#     [2, 0, 0]
+# ])
+# e = np.array([
+#     [0, 1, 0, 1],
+#     [1, 1, 1, 1],
+#     [2, 1, 1, 0],
+#     [0, 1, 0, 1]
+# ])
+
+# b = csr_matrix(a)
+# d = csr_matrix(c)
+# f = csr_matrix(e)
+
+# print(connected_components(b))
+# print(dijkstra(b, return_predecessors=True, indices=0))
+# print(floyd_warshall(b, return_predecessors=True))
+# print(bellman_ford(d, return_predecessors=True, indices=0))
+# print(depth_first_order(f, 1))
+# print(breadth_first_order(f, 1))
+
+# import numpy as np
+# from scipy.spatial import Delaunay
+# import matplotlib.pyplot as plt
+
+# a = np.array([
+#     [2, 4],
+#     [3, 4],
+#     [3, 0],
+#     [2, 2],
+#     [4, 1]
+# ])
+
+# simplices = Delaunay(a).simplices
+
+# plt.triplot(a[:, 0], a[:, 1], simplices)
+# plt.scatter(a[:, 0], a[:, 1], color='r')
+
+# plt.show()
+
 import numpy as np
-from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall, bellman_ford, depth_first_order, breadth_first_order
-from scipy.sparse import csr_matrix
+from scipy.spatial import ConvexHull
+import matplotlib.pyplot as plt
 
 a = np.array([
-    [0, 1, 2],
-    [1, 0, 0],
-    [2, 0, 0]
-])
-c = np.array([
-    [0, -1, 2],
-    [1, 0, 0],
-    [2, 0, 0]
-])
-e = np.array([
-    [0, 1, 0, 1],
-    [1, 1, 1, 1],
-    [2, 1, 1, 0],
-    [0, 1, 0, 1]
+    [2, 4],
+    [3, 4],
+    [3, 0],
+    [2, 2],
+    [4, 1],
+    [1, 2],
+    [5, 0],
+    [3, 1],
+    [1, 2],
+    [0, 2]
 ])
 
-b = csr_matrix(a)
-d = csr_matrix(c)
-f = csr_matrix(e)
+hull = ConvexHull(a)
+hull_points = hull.simplices
 
-print(connected_components(b))
-print(dijkstra(b, return_predecessors=True, indices=0))
-print(floyd_warshall(b, return_predecessors=True))
-print(bellman_ford(d, return_predecessors=True, indices=0))
-print(depth_first_order(f, 1))
-print(breadth_first_order(f, 1))
+plt.scatter(a[:, 0], a[:,1])
+for simplex in hull_points:
+    plt.plot(a[simplex, 0], a[simplex, 1], 'k-')
+
+plt.show()
