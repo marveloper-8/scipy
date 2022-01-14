@@ -203,7 +203,7 @@
 # print(csr_matrix(a))
 
 import numpy as np
-from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall, bellman_ford
+from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall, bellman_ford, depth_first_order, breadth_first_order
 from scipy.sparse import csr_matrix
 
 a = np.array([
@@ -216,10 +216,20 @@ c = np.array([
     [1, 0, 0],
     [2, 0, 0]
 ])
+e = np.array([
+    [0, 1, 0, 1],
+    [1, 1, 1, 1],
+    [2, 1, 1, 0],
+    [0, 1, 0, 1]
+])
+
 b = csr_matrix(a)
 d = csr_matrix(c)
+f = csr_matrix(e)
 
 print(connected_components(b))
 print(dijkstra(b, return_predecessors=True, indices=0))
 print(floyd_warshall(b, return_predecessors=True))
 print(bellman_ford(d, return_predecessors=True, indices=0))
+print(depth_first_order(f, 1))
+# print(breadth_first_order(f, 1))
