@@ -253,28 +253,35 @@
 
 # plt.show()
 
-import numpy as np
-from scipy.spatial import ConvexHull
-import matplotlib.pyplot as plt
+# import numpy as np
+# from scipy.spatial import ConvexHull
+# import matplotlib.pyplot as plt
 
-a = np.array([
-    [2, 4],
-    [3, 4],
-    [3, 0],
-    [2, 2],
-    [4, 1],
-    [1, 2],
-    [5, 0],
-    [3, 1],
-    [1, 2],
-    [0, 2]
-])
+# a = np.array([
+#     [2, 4],
+#     [3, 4],
+#     [3, 0],
+#     [2, 2],
+#     [4, 1],
+#     [1, 2],
+#     [5, 0],
+#     [3, 1],
+#     [1, 2],
+#     [0, 2]
+# ])
 
-hull = ConvexHull(a)
-hull_points = hull.simplices
+# hull = ConvexHull(a)
+# hull_points = hull.simplices
 
-plt.scatter(a[:, 0], a[:,1])
-for simplex in hull_points:
-    plt.plot(a[simplex, 0], a[simplex, 1], 'k-')
+# plt.scatter(a[:, 0], a[:,1])
+# for simplex in hull_points:
+#     plt.plot(a[simplex, 0], a[simplex, 1], 'k-')
 
-plt.show()
+# plt.show()
+
+from scipy.spatial import KDTree
+
+a = [(1, -1), (2, 3), (-2, 3), (2, -3)]
+kdtree = KDTree(a)
+b = kdtree.query((1, 1))
+print(b)
