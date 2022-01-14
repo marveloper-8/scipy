@@ -180,12 +180,12 @@
 # b = minimize(a, 0, method='BFGS')
 # print(b)
 
-import numpy as np
-from scipy.sparse import csr_matrix
+# import numpy as np
+# from scipy.sparse import csr_matrix
 
-a = np.array([[0, 0, 0], [0, 0, 1], [1, 0, 2]])
-b = csr_matrix(a).tocsc()
-print(b)
+# a = np.array([[0, 0, 0], [0, 0, 1], [1, 0, 2]])
+# b = csr_matrix(a).tocsc()
+# print(b)
 
 # b = csr_matrix(a)
 # b.sum_duplicates()
@@ -201,3 +201,15 @@ print(b)
 
 # a = np.array([0, 0, 0, 0, 0, 1, 1, 0, 2])
 # print(csr_matrix(a))
+
+import numpy as np
+from scipy.sparse.csgraph import connected_components
+from scipy.sparse import csr_matrix
+
+a = np.array([
+    [0, 1, 2],
+    [1, 0, 0],
+    [2, 0, 0]
+])
+b = csr_matrix(a)
+print(connected_components(b))
