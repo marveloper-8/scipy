@@ -313,3 +313,6 @@ io.savemat('a.mat', {"vec": a})
 b = io.loadmat('a.mat')
 print(b)
 print(b['vec'])
+
+c = io.loadmat('a.mat', squeeze_me=True)
+print(c['vec'])
