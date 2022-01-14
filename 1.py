@@ -203,7 +203,7 @@
 # print(csr_matrix(a))
 
 import numpy as np
-from scipy.sparse.csgraph import connected_components, dijkstra
+from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall
 from scipy.sparse import csr_matrix
 
 a = np.array([
@@ -215,3 +215,4 @@ b = csr_matrix(a)
 
 print(connected_components(b))
 print(dijkstra(b, return_predecessors=True, indices=0))
+print(floyd_warshall(b, return_predecessors=True))
