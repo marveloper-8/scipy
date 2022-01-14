@@ -184,9 +184,12 @@ import numpy as np
 from scipy.sparse import csr_matrix
 
 a = np.array([[0, 0, 0], [0, 0, 1], [1, 0, 2]])
-b = csr_matrix(a)
-b.sum_duplicates()
+b = csr_matrix(a).tocsc()
 print(b)
+
+# b = csr_matrix(a)
+# b.sum_duplicates()
+# print(b)
 
 # b = csr_matrix(a)
 # b.eliminate_zeros()
