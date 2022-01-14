@@ -203,7 +203,7 @@
 # print(csr_matrix(a))
 
 import numpy as np
-from scipy.sparse.csgraph import connected_components
+from scipy.sparse.csgraph import connected_components, dijkstra
 from scipy.sparse import csr_matrix
 
 a = np.array([
@@ -212,4 +212,6 @@ a = np.array([
     [2, 0, 0]
 ])
 b = csr_matrix(a)
+
 print(connected_components(b))
+print(dijkstra(b, return_predecessors=True, indices=0))
