@@ -279,9 +279,16 @@
 
 # plt.show()
 
-from scipy.spatial import KDTree
+# from scipy.spatial import KDTree
 
-a = [(1, -1), (2, 3), (-2, 3), (2, -3)]
-kdtree = KDTree(a)
-b = kdtree.query((1, 1))
-print(b)
+# a = [(1, -1), (2, 3), (-2, 3), (2, -3)]
+# kdtree = KDTree(a)
+# b = kdtree.query((1, 1))
+# print(b)
+
+from scipy.spatial.distance import euclidean
+
+c = (1, 0)
+d = (10, 2)
+e = euclidean(c, d)
+print(e)
