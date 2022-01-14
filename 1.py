@@ -286,9 +286,21 @@
 # b = kdtree.query((1, 1))
 # print(b)
 
-from scipy.spatial.distance import euclidean
+from scipy.spatial.distance import euclidean, cityblock, cosine, hamming
 
 c = (1, 0)
 d = (10, 2)
 e = euclidean(c, d)
 print(e)
+
+f = cityblock(c, d)
+print(f)
+
+g = cosine(c, d)
+print(g)
+
+h = (True, False, True)
+i = (False, True, True)
+
+j = hamming(h, i)
+print(j)
