@@ -310,3 +310,5 @@ import numpy as np
 
 a = np.arange(10)
 io.savemat('a.mat', {"vec": a})
+b = io.loadmat('a.mat')
+print(b)
