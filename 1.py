@@ -185,8 +185,12 @@ from scipy.sparse import csr_matrix
 
 a = np.array([[0, 0, 0], [0, 0, 1], [1, 0, 2]])
 b = csr_matrix(a)
-b.eliminate_zeros()
+b.sum_duplicates()
 print(b)
+
+# b = csr_matrix(a)
+# b.eliminate_zeros()
+# print(b)
 
 # print(csr_matrix(a).count_nonzero())
 
