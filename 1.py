@@ -336,12 +336,15 @@
 # print(i)
 
 import numpy as np
-from scipy.stats import ttest_ind
+from scipy.stats import ttest_ind, kstest
 
 a = np.random.normal(size=100)
 b = np.random.normal(size=100)
 c = ttest_ind(a, b)
 print(c)
 
-d = ttest_ind(a, b).pvalue
+# d = ttest_ind(a, b).pvalue
+# print(d)
+
+d = kstest(a, 'norm')
 print(d)
