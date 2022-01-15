@@ -305,14 +305,22 @@
 # j = hamming(h, i)
 # print(j)
 
-from scipy import io
+# from scipy import io
+# import numpy as np
+
+# a = np.arange(10)
+# io.savemat('a.mat', {"vec": a})
+# b = io.loadmat('a.mat')
+# print(b)
+# print(b['vec'])
+
+# c = io.loadmat('a.mat', squeeze_me=True)
+# print(c['vec'])
+
+from scipy.interpolate import interp1d
 import numpy as np
-
 a = np.arange(10)
-io.savemat('a.mat', {"vec": a})
-b = io.loadmat('a.mat')
-print(b)
-print(b['vec'])
-
-c = io.loadmat('a.mat', squeeze_me=True)
-print(c['vec'])
+b = 2 * a + 1
+c = interp1d(a, b)
+d = c(np.arange(2.1, 3, 0.1))
+print(d)
