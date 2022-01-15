@@ -336,7 +336,7 @@
 # print(i)
 
 import numpy as np
-from scipy.stats import ttest_ind, kstest
+from scipy.stats import ttest_ind, kstest, describe
 
 a = np.random.normal(size=100)
 b = np.random.normal(size=100)
@@ -348,3 +348,6 @@ print(c)
 
 d = kstest(a, 'norm')
 print(d)
+
+e = describe(a)
+print(e)
