@@ -336,7 +336,7 @@
 # print(i)
 
 import numpy as np
-from scipy.stats import ttest_ind, kstest, describe, skew, kurtosis
+from scipy.stats import ttest_ind, kstest, describe, skew, kurtosis, normaltest
 
 a = np.random.normal(size=100)
 b = np.random.normal(size=100)
@@ -354,3 +354,5 @@ print(e)
 
 print(skew(a))
 print(kurtosis(a))
+
+print(normaltest(a))
