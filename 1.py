@@ -317,20 +317,28 @@
 # c = io.loadmat('a.mat', squeeze_me=True)
 # print(c['vec'])
 
-from scipy.interpolate import interp1d, UnivariateSpline, Rbf
+# from scipy.interpolate import interp1d, UnivariateSpline, Rbf
+# import numpy as np
+# a = np.arange(10)
+# b = 2 * a + 1
+# e = a ** 2 + np.sin(a) + 1
+
+# c = interp1d(a, b)
+# d = c(np.arange(2.1, 3, 0.1))
+# print(d)
+
+# f = UnivariateSpline(a, e)
+# g = f(np.arange(2.1, 3, 0.1))
+# print(g)
+
+# h = Rbf(a, e)
+# i = h(np.arange(2.1, 3, 0.1))
+# print(i)
+
 import numpy as np
-a = np.arange(10)
-b = 2 * a + 1
-e = a ** 2 + np.sin(a) + 1
+from scipy.stats import ttest_ind
 
-c = interp1d(a, b)
-d = c(np.arange(2.1, 3, 0.1))
-print(d)
-
-f = UnivariateSpline(a, e)
-g = f(np.arange(2.1, 3, 0.1))
-print(g)
-
-h = Rbf(a, e)
-i = h(np.arange(2.1, 3, 0.1))
-print(i)
+a = np.random.normal(size=100)
+b = np.random.normal(size=100)
+c = ttest_ind(a, b)
+print(c)
