@@ -342,3 +342,6 @@ a = np.random.normal(size=100)
 b = np.random.normal(size=100)
 c = ttest_ind(a, b)
 print(c)
+
+d = ttest_ind(a, b).pvalue
+print(d)
