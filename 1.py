@@ -317,15 +317,20 @@
 # c = io.loadmat('a.mat', squeeze_me=True)
 # print(c['vec'])
 
-from scipy.interpolate import interp1d, UnivariateSpline
+from scipy.interpolate import interp1d, UnivariateSpline, Rbf
 import numpy as np
 a = np.arange(10)
 b = 2 * a + 1
+e = a ** 2 + np.sin(a) + 1
+
 c = interp1d(a, b)
 d = c(np.arange(2.1, 3, 0.1))
 print(d)
 
-e = a ** 2 + np.sin(a) + 1
 f = UnivariateSpline(a, e)
 g = f(np.arange(2.1, 3, 0.1))
 print(g)
+
+h = Rbf(a, e)
+i = h(np.arange(2.1, 3, 0.1))
+print(i)
